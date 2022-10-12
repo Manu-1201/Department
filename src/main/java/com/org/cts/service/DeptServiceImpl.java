@@ -31,15 +31,23 @@ public class DeptServiceImpl implements DeptService{
     }
 
     @Override
-    public Department findDeptById(Integer id) {
-        Department d3 = deptRepo.getById(id);
-
+    public Department findDeptById(Integer deptId) {
+        Department d3 = deptRepo.getById(deptId);
         return d3;
     }
-
+    @Override
+    public Department findDeptByName(String deptName){
+        Department d4 = deptRepo.findByDeptName(deptName);
+        return d4;
+    }
     @Override
     public String deleteByAddress(String deptLocation) {
          deptRepo.deleteByDeptLocation(deptLocation);
         return "success fully deleted";
+    }
+    @Override
+    public Department delById(Integer deptId){
+        deptRepo.deleteById(deptId);
+        return null;
     }
 }

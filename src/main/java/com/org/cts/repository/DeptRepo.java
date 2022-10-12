@@ -11,6 +11,6 @@ public interface DeptRepo extends JpaRepository<Department, Integer> {
 @Transactional
    String deleteByDeptLocation(String deptLocation);
 
-
+Department findByDeptName(String deptName);
 
 }
